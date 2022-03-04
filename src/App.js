@@ -5,7 +5,11 @@ import Quiz from "./components/Quiz";
 function App() {
 	const [start, setStart] = useState(true);
 
-	return <main>{start ? <StartPage /> : <Quiz />}</main>;
+	function startGame() {
+		setStart(false);
+	}
+
+	return <main>{start ? <StartPage startGame={startGame} /> : <Quiz />}</main>;
 }
 
 export default App;
