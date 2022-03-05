@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./assets/sass/main.css";
+
 import StartPage from "./components/StartPage";
 import Quiz from "./components/Quiz";
 
@@ -9,7 +11,11 @@ function App() {
 		setStart(false);
 	}
 
-	return <main>{start ? <StartPage startGame={startGame} /> : <Quiz />}</main>;
+	return (
+		<main className="main-container">
+			{start ? <StartPage startGame={startGame} /> : <Quiz />}
+		</main>
+	);
 }
 
 export default App;
