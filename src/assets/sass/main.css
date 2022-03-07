@@ -32,6 +32,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: url(/public/blob_top.png) no-repeat, url(/public/blob_bottom.png) no-repeat;
+  background-position: right -50%, left bottom;
 }
 
 .start-page__heading {
