@@ -4,6 +4,9 @@ export default function Quiz() {
 	return (
 		<div className="quiz-page">
 			<Question />
+			<Question />
+			<Question />
+			<Question />
 			<div className="button-check">Check answers</div>
 		</div>
 	);

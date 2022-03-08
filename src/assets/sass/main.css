@@ -20,7 +20,7 @@ body {
 
 .main-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #f5f7fb;
 }
 
@@ -69,17 +69,24 @@ body {
 }
 
 .quiz-page {
-  padding: 10rem 25%;
+  padding: 10rem 25% 5rem 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url(/public/blob_top.png) no-repeat, url(/public/blob_bottom.png) no-repeat;
+  background-position: right -50%, left bottom;
+  background-size: 25rem, 15rem;
 }
 
 .quiz-questions {
   width: 80%;
   border-bottom: 0.2rem solid #dbdef0;
   padding-bottom: 2rem;
+}
+
+.quiz-questions:not(:last-child) {
+  margin-bottom: 4rem;
 }
 
 .quiz-questions .questions {
