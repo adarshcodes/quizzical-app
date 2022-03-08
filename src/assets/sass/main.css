@@ -108,4 +108,24 @@ body {
 .quiz-questions .choices-box .choice:not(:last-child) {
   margin-right: 2rem;
 }
+
+.button-check {
+  padding: 1.5rem 4rem;
+  color: #f5f7fb;
+  background-color: #4d5b9e;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-top: 4rem;
+  transition: all 0.3s;
+}
+
+.button-check:hover {
+  cursor: pointer;
+  background-color: rgba(41, 50, 100, 0.9);
+}
+
+.button-check:active {
+  transform: translateY(0.2rem) scale(0.95);
+}
 /*# sourceMappingURL=main.css.map */
