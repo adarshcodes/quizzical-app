@@ -70,5 +70,42 @@ body {
 
 .quiz-page {
   padding: 10rem 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-questions {
+  width: 80%;
+  border-bottom: 0.2rem solid #dbdef0;
+  padding-bottom: 2rem;
+}
+
+.quiz-questions .questions {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #293264;
+  margin-bottom: 2rem;
+}
+
+.quiz-questions .choices-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.quiz-questions .choices-box .choice {
+  padding: 0.5rem 2rem;
+  border: 0.16rem solid #4d5b9e;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #293264;
+  cursor: pointer;
+}
+
+.quiz-questions .choices-box .choice:not(:last-child) {
+  margin-right: 2rem;
 }
 /*# sourceMappingURL=main.css.map */

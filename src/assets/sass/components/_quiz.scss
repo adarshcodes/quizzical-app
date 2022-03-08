@@ -1,3 +1,36 @@
 .quiz-page {
 	padding: 10rem 25%;
+	@include flex-column-center;
+}
+
+.quiz-questions {
+	width: 80%;
+	border-bottom: 0.2rem solid $selected;
+	padding-bottom: 2rem;
+
+	.questions {
+		font-size: 2.2rem;
+		font-weight: 700;
+		color: $dark-blue;
+		margin-bottom: 2rem;
+	}
+
+	.choices-box {
+		@include flex-row-start;
+
+		.choice {
+			&:not(:last-child) {
+				margin-right: 2rem;
+			}
+
+			padding: 0.5rem 2rem;
+			border: 0.16rem solid $dark-blue-2;
+
+			border-radius: 1rem;
+			font-size: 1.5rem;
+			font-weight: 500;
+			color: $dark-blue;
+			cursor: pointer;
+		}
+	}
 }
