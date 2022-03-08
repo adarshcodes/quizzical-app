@@ -67,4 +67,8 @@ body {
 .start-page__btn:active {
   transform: translateY(0.2rem) scale(0.95);
 }
+
+.quiz-page {
+  padding: 10rem 25%;
+}
 /*# sourceMappingURL=main.css.map */

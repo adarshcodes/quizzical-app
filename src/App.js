@@ -5,7 +5,7 @@ import StartPage from "./components/StartPage";
 import Quiz from "./components/Quiz";
 
 function App() {
-	const [start, setStart] = useState(true);
+	const [start, setStart] = useState(false);
 
 	function startGame() {
 		setStart(false);
