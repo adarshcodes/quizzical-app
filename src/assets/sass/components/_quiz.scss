@@ -1,5 +1,5 @@
 .quiz-page {
-	padding: 10rem 25% 5rem 25%;
+	padding: 8rem 25% 5rem 25%;
 	@include flex-column-center;
 
 	background: url(/public/blob_top.png) no-repeat,
@@ -13,9 +13,7 @@
 	border-bottom: 0.2rem solid $selected;
 	padding-bottom: 2rem;
 
-	&:not(:last-child) {
-		margin-bottom: 4rem;
-	}
+	margin-bottom: 4rem;
 
 	.questions {
 		font-size: 2.2rem;
@@ -51,7 +49,6 @@
 	font-size: 1.5rem;
 	border-radius: 1rem;
 	cursor: pointer;
-	margin-top: 4rem;
 	transition: all 0.3s;
 
 	&:hover {
