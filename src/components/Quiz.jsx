@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Quiz() {
+export default function Quiz(props) {
 	return (
 		<div className="quiz-page">
-			<Question />
+			<Question select={props.selection} />
 			<Question />
 			<Question />
 			<Question />
@@ -12,12 +12,14 @@ export default function Quiz() {
 	);
 }
 
-function Question() {
+function Question(props) {
 	return (
 		<div className="quiz-questions">
 			<h1 className="questions">How would one say goodbye in Spanish?</h1>
 			<div className="choices-box">
-				<div className="choice">Adiós</div>
+				<div className="choice" onClick={props.select}>
+					Adiós
+				</div>
 				<div className="choice">Adiós</div>
 				<div className="choice">Adiós</div>
 				<div className="choice">Adiós</div>
