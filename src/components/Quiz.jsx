@@ -1,6 +1,20 @@
 import React from "react";
 
 export default function Quiz(props) {
+	const [quiz, setQuiz] = React.useState({});
+
+	function getQuestions() {
+		fetch(`https://opentdb.com/api.php?amount=5&type=multiple`)
+			.then((res) => res.json())
+			.then((data) => {
+				setQuiz(data);
+			});
+	}
+
+	React.useEffect(() => {
+		getQuestions();
+	}, []);
+
 	return (
 		<div className="quiz-page">
 			<Question select={props.selection} />
