@@ -69,7 +69,7 @@ body {
 }
 
 .quiz-page {
-  padding: 8rem 25% 5rem 25%;
+  padding: 8rem 20% 5rem 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,7 +80,7 @@ body {
 }
 
 .quiz-questions {
-  width: 80%;
+  width: 100%;
   border-bottom: 0.2rem solid #dbdef0;
   padding-bottom: 2rem;
   margin-bottom: 4rem;
@@ -94,6 +94,7 @@ body {
 }
 
 .quiz-questions .choices-box {
+  text-align: center;
   display: flex;
   justify-content: flex-start;
   align-items: center;

@@ -1,5 +1,5 @@
 .quiz-page {
-	padding: 8rem 25% 5rem 25%;
+	padding: 8rem 20% 5rem 20%;
 	@include flex-column-center;
 
 	background: url(/public/blob_top.png) no-repeat,
@@ -9,7 +9,7 @@
 }
 
 .quiz-questions {
-	width: 80%;
+	width: 100%;
 	border-bottom: 0.2rem solid $selected;
 	padding-bottom: 2rem;
 
@@ -23,6 +23,7 @@
 	}
 
 	.choices-box {
+		text-align: center;
 		@include flex-row-start;
 
 		.choice {
