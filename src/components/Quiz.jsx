@@ -24,7 +24,7 @@ export default function Quiz(props) {
 				key={nanoid()}
 				question={quest.question}
 				rightOption={quest.correct_answer}
-				wrongOptions={quest.incorrect_answer}
+				wrongOptions={quest.incorrect_answers}
 			/>
 		);
 	});
@@ -38,19 +38,27 @@ export default function Quiz(props) {
 }
 
 function Question(props) {
+	let options = props.wrongOptions.map((wrongOption) => {
+		return wrongOption;
+	});
+
+	options.push(props.rightOption);
+	options.sort(() => Math.random() - 0.5);
+
+	const allOptions = options.map((allOp) => {
+		return <Choice key={nanoid()} options={allOp} />;
+	});
+
+	console.log(allOptions);
+
 	return (
 		<div className="quiz-questions">
 			<h1 className="questions">{props.question}</h1>
-			<div className="choices-box">
-				<div className="choice">Adiós</div>
-				<div className="choice">Adiós</div>
-				<div className="choice">Adiós</div>
-				<div className="choice">Adiós</div>
-			</div>
+			<div className="choices-box">{allOptions}</div>
 		</div>
 	);
 }
 
-function Options(props) {
-	return <div className="choice">{props.optio}</div>;
+function Choice(props) {
+	return <div className="choice">{props.options}</div>;
 }
