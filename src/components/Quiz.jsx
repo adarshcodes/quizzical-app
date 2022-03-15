@@ -4,6 +4,8 @@ import { nanoid } from "nanoid";
 export default function Quiz(props) {
 	const [quiz, setQuiz] = React.useState([]);
 
+	const [selected, setSelected] = React.useState(false);
+
 	function getQuestions() {
 		fetch(`https://opentdb.com/api.php?amount=5&type=multiple`)
 			.then((res) => res.json())
