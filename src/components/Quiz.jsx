@@ -6,6 +6,12 @@ export default function Quiz(props) {
 
 	const [selected, setSelected] = React.useState(false);
 
+	function toggleSelection() {
+		setSelected(!selected);
+
+		console.log(selected);
+	}
+
 	function getQuestions() {
 		fetch(`https://opentdb.com/api.php?amount=5&type=multiple`)
 			.then((res) => res.json())
@@ -27,6 +33,7 @@ export default function Quiz(props) {
 				question={quest.question}
 				rightOption={quest.correct_answer}
 				wrongOptions={quest.incorrect_answers}
+				toggleSelection={toggleSelection}
 			/>
 		);
 	});
@@ -48,7 +55,9 @@ function Question(props) {
 	options.sort(() => Math.random() - 0.5);
 
 	const allOptions = options.map((allOp) => {
-		return <Choice key={nanoid()} options={allOp} />;
+		return (
+			<Choice key={nanoid()} options={allOp} select={props.toggleSelection} />
+		);
 	});
 
 	console.log(allOptions);
@@ -62,5 +71,9 @@ function Question(props) {
 }
 
 function Choice(props) {
-	return <div className="choice">{props.options}</div>;
+	return (
+		<div className="choice" onClick={props.select}>
+			{props.options}
+		</div>
+	);
 }
