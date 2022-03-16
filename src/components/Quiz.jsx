@@ -52,7 +52,11 @@ function Question(props) {
 	});
 
 	options.push(props.rightOption);
-	options.sort(() => Math.random() - 0.5);
+
+	React.useEffect(() => {
+		options.sort(() => Math.random() - 0.5);
+		return;
+	});
 
 	const allOptions = options.map((allOp) => {
 		return (
