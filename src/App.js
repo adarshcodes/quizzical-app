@@ -6,7 +6,7 @@ import Quiz from "./components/Quiz";
 
 function App() {
 	// Starting the game
-	const [start, setStart] = useState(false);
+	const [start, setStart] = useState(true);
 
 	function startGame() {
 		setStart(false);
