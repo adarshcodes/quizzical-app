@@ -4,14 +4,6 @@ import { nanoid } from "nanoid";
 export default function Quiz(props) {
 	const [quiz, setQuiz] = React.useState([]);
 
-	const [selected, setSelected] = React.useState(false);
-
-	function toggleSelection() {
-		setSelected(!selected);
-
-		console.log(selected);
-	}
-
 	function getQuestions() {
 		fetch(`https://opentdb.com/api.php?amount=5&type=multiple`)
 			.then((res) => res.json())
@@ -33,7 +25,6 @@ export default function Quiz(props) {
 				question={quest.question}
 				rightOption={quest.correct_answer}
 				wrongOptions={quest.incorrect_answers}
-				toggleSelection={toggleSelection}
 			/>
 		);
 	});
@@ -58,11 +49,22 @@ function Question(props) {
 		return;
 	});
 
+	// const [selected, setSelected] = React.useState(false);
+
 	const allOptions = options.map((allOp) => {
 		return (
-			<Choice key={nanoid()} options={allOp} select={props.toggleSelection} />
+			<Choice
+				key={nanoid()}
+				id={nanoid()}
+				options={allOp}
+				select={() => toggleSelection(allOp.id)}
+			/>
 		);
 	});
+
+	function toggleSelection(id) {
+		console.log(id);
+	}
 
 	console.log(allOptions);
 
